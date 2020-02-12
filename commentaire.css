@@ -1,0 +1,89 @@
+body{
+    background-image: url(oiseau.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+    
+}
+
+header{
+    width: 100%;
+}
+        
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    background-color: rgb(29, 27, 27);
+    box-shadow: 1px 10px 10px white;
+}
+
+li:hover{
+    background-color:  rgb(194, 185, 56);
+    }
+ 
+
+#cr{
+    height: 50px;
+    width: 53px;
+}
+
+#lid1{
+    padding-top: 37px;
+}
+
+#lid2{
+    padding-top: 37px;
+}
+
+
+
+ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+       
+
+li{
+    list-style: none;
+    padding: 15px;   
+}
+        
+
+li a{ 
+    color: white; 
+    text-decoration: none; 
+    font-size: 28px; 
+}
+
+
+.align{
+    display: flex;
+    margin-left: 10%;
+    font-size: 173%;
+}
+
+
+.nom{
+    text-shadow: -1px -2px white, 3px 1px  rgb(194, 185, 56);
+    font-size: 40px;
+    font-style: oblique;
+    margin-top: 10px;
+
+
+    
+            
+    
+        #logo{
+        box-shadow: 1px -10px 10px white;
+        justify-content: space-around;
+        color: white;
+        background-color: black;
+        display: flex;
+        margin-top: 6%;
+        height: 62px;
+        width: 100%;
+        }
