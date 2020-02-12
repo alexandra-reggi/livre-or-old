@@ -12,7 +12,7 @@ body{
 }
 
 
-.align{
+#align{
     
     margin-bottom: 4%;
     display: flex;
@@ -22,7 +22,7 @@ body{
 }
 
 
-.nom{
+#nom{
     text-shadow: -1px -2px white, 3px 1px rgb(248, 171, 210);
     margin-right: 10px;
     font-style: oblique;
@@ -81,11 +81,7 @@ li{
 }
 
 
-#lid1{
-    padding-top: 37px;
-}
-
-#lid2{
+.bas{
     padding-top: 37px;
 }
 

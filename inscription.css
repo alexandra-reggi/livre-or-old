@@ -26,14 +26,9 @@ nav{
     width: 53px;
 }
 
-#lid1{
+#bas{
     padding-top: 37px;
 }
-
-#lid2{
-    padding-top: 37px;
-}
-
 
 
 ul{
@@ -56,14 +51,14 @@ li a{
 }
 
 
-.align{
+#align{
     display: flex;
     margin-left: 10%;
     font-size: 173%;
 }
 
 
-.nom{
+#nom{
     text-shadow: -1px -2px white, 3px 1px rgb(97, 179, 140);
     font-size: 40px;
     font-style: oblique;
@@ -95,20 +90,20 @@ li:hover{
     width: 100%;
     }
 
-   #couss{
+#couss{
     width: 210px;
     height: 210px;
    }
 
 
-   .form-img{
-    margin-top: -14px;
+#form-img{
+    margin-top: 3px;
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
    }
 
-   .imgcouss{
+#imgcouss{
     display: flex;
     flex-direction: column-reverse;
     margin-right: 167px;

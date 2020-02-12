@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>livre-or</title>
-    <meta sharset="utf-8">
-    <link rel="stylesheet" href="commentaire.css">
+    <head>
+        <title>livre-or</title>
+        <meta sharset="utf-8">
+        <link rel="stylesheet" href="commentaire.css">
     </head>
 
         
@@ -22,22 +22,28 @@
         </nav>
     </header>
 
-<div class="align">  
-    <p><strong> Laissez un commentaire sur</p><p class="nom"> "PROTECT ANIMAL"</strong></p>
-       
-</div>
+<main>
 
+    <section>
+        <article id="align">  
+            <p><strong> Laissez un commentaire sur</p><p id="nom"> "PROTECT ANIMAL"</strong></p>
+        </article>
+    </section>
+
+</main>
 
 <footer id="logo">
 
-<article>
-    <p>Copyright 2019-2020 | All by Rights Reserved.</p>
-</article>
+    <article>
+        <p>Copyright 2019-2020 | All by Rights Reserved.</p>
+    </article>
 
-    <img height="60" src="footeror.webp">
+        <article>
+            <img height="60" src="footeror.webp">
+        </article>
 
-<article>
-    <p>Sieges social Rue Montreuil PARIS 75014<br> Siren 648328822774 | Siret 6483874678. </p>
-</article>
+    <article>
+        <p>Sieges social Rue Montreuil PARIS 75014<br> Siren 648328822774 | Siret 6483874678.</p>
+    </article>
   
 </footer>
