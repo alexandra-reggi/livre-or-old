@@ -10,18 +10,9 @@
         
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.php"><img id="cr"src="coeur.webp">P.A</a></li>
-                <li><a href="connexion.php">CONNEXION</a></li>
-                <li id="bas"><a href="inscription.php">INSCRIPTION</a></li>
-                <li><a href="profil.php">PROFIL</a></li>
-                <li id="bas"><a href="livre-or.php">LIVRE D'OR</a></li>
-                <li><a href="commentaire.php">COMMENTAIRE</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php
+    include("barrenav.php");//j'ai au prealable crée sur un autre fichier une barre nav qui change selon si je suis connecté ou non//
+    ?> 
 
 <main>
     <section>
@@ -36,7 +27,7 @@
                 <label>Login</label><br>
                 <input type ="text" name ="login" placeholder ="Entrez votre login"/><br><br>
                 <label>Password</label><br>
-                <input type ="password" name ="psw" placeholder ="Entrez votre password"/><br><br>
+                <input type ="password" name ="password" placeholder ="Entrez votre password"/><br><br>
                 <label>Confirmez le Password</label><br>
                 <input type ="password" name ="confirm" placeholder ="Confirmez votre password"/><br><br>
                 <input type = "submit" value="s'inscrire" name="submit"/>
@@ -52,21 +43,23 @@
 
 <?php
 
-$connexion= mysqli_connect("localhost","root","","livreor");
+$connexion= mysqli_connect("localhost","root","","livreor");//connection à ma base bdd//
 $requete= "select * from utilisateurs";
 $query= mysqli_query($connexion, $requete);
 $resultat= mysqli_fetch_all($query);
 
 
-if(isset($_POST['submit']))
+if(isset($_POST['submit']))//quand le bouton valider est cliqué, ceci devient ça et celà devient ça//
 {
-    $login= ($_POST['login']);
-    $psw= ($_POST['psw']);
-    $confirm= ($_POST['confirm']);
+    
+
+     if(!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['confirm']))//Si les champs ne sont pas vide (donc avec !empty), donc remplis, je vais dans ma bdd à id de l'utilisateur//
+        {
+            $login = $_POST['login'];
+            $pwd = $_POST['password'];
+            $confirm = $_POST['confirm'];
 
 
-     if(!empty($login) && !empty($psw) && !empty($confirm))
-        { 
                     $connexion= mysqli_connect("localhost","root","","livreor");
                     $newlogin="SELECT id FROM utilisateurs WHERE login='".$login."'";
                     $reponse=mysqli_query($connexion,$newlogin);
@@ -74,18 +67,20 @@ if(isset($_POST['submit']))
                     var_dump($numberlogin);
 
 
-                if(empty($numberlogin))
+                if(empty($numberlogin))//Si le login est libre//
                 {
                    
 
-                    if($psw==$confirm)
+                    if($pwd==$confirm)//Si le psw et la confirmation sont exacts//
                     {
-                        $psw=password_hash($psw,PASSWORD_BCRYPT);
-                        $newinsert="INSERT INTO `utilisateurs` (`id`, `login`, `password`) VALUES (NULL, '".$login."', '".$psw."');";
+                        $pwd=password_hash($psw,PASSWORD_BCRYPT);
+                        $newinsert="INSERT INTO utilisateurs (login, password) VALUES ('$login', '$pwd');";
                         $reponse=mysqli_query($connexion,$newinsert);
                         
+                        header('Location: connexion.php');
                         
                     }
+
                      else
                     {
                         echo "Les passwords doivent etre identiques.";

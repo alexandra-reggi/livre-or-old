@@ -60,23 +60,23 @@ $resultat= mysqli_fetch_all($query);
 if(isset($_POST['submit'])){
  
     $login= $_POST['login']; //le login sera ce qui sera rentré par le client//
-    $password= $_POST['password']; // le password   sera   "       "        "   //
+    $password=  password_hash ($_POST['password'], PASSWORD_BCRYPT, array('cost' => 12)); // le password   sera   "       "        "   //
     
 
 
-    if(!empty($login AND !empty ($password))){ //Si les champs ne sont pas vides//
+    if(!empty($login) && !empty ($password)){ //Si les champs ne sont pas vides//
        
-        $requete2= "select * from utilisateurs WHERE login = '$login' && password = '$password'"; //je prépare ce que je vais demander (donc ma requet) savoir si à cet emplacement dans la base de donnée si login et pass sont dejà existants//
+        $requete2= "select * from utilisateurs WHERE login = '$login'"; //je prépare ce que je vais demander (donc ma requet) savoir si à cet emplacement dans la base de donnée si login et pass sont dejà existants//
 
         $query2= mysqli_query($connexion, $requete2); //j'envoie la demande (donc la requete)//
 
         $resultat2= mysqli_fetch_all($query2); //je recupere le resultat//
 
-        var_dump($resultat2); //là je m'affiche à moi ce qu'il y a dans la base de données//
-
-        if($resultat2==true){ // si ce sont les bons login et password qui sont rentrés//
+        if(!empty($resultat2)){ // donc si resultat2 n'est pas vide c'est à dire qu'il existe dans la bbd//
             $_SESSION['login'] = $login;
-            header('Location: connexion.php'); // ici le client reste sur la même page lorsqu'il est connecté//
+           
+            header('Location: connexion.php');// ici le client reste sur la même page lorsqu'il est connecté//
+            
         }
             else{
                 echo "Désolé nous n'avons pas pu vous identifier";
@@ -88,17 +88,14 @@ if(isset($_POST['submit'])){
     
 } 
 
-if ( isset ($_SESSION['login'])){
-    echo " bienvenue";
-?>
+if (isset ($_SESSION['login'])){
+    echo "bienvenue";    
+}
 
- 
-<?php
  if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
      session_destroy();
-     header("location:connexion.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+     header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
  }
-}
 
 ?>
            
