@@ -67,6 +67,10 @@ var_dump($resultat);//pour m'afficher à moi ce qu'il y a dans la bdd pour voir 
 
                 
 // }
+if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
+    session_destroy();
+    header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+}
 
 ?>
 

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
 
     <head>
@@ -20,7 +23,12 @@
             <p><strong>Bienvenue sur le livre d'or de </p><p id="nom">"PROTECT ANIMAL"</strong></p>
         </article>      
     </section>
-
+<?php
+if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
+    session_destroy();
+    header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+}
+?>
 </main>
 
 <footer id="logo">

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
 
 
@@ -11,20 +14,9 @@
     
 
 <body>
-    <header>
-       
-        <nav>
-            <ul>
-                <li><a href="index.php"><img id="cr"src="coeur.webp">P.A</a></li>
-                <li><a href="connexion.php">CONNEXION</a></li>
-                <li class="bas"><a href="inscription.php">INSCRIPTION</a></li>
-                <li ><a href="profil.php">PROFIL</a></li>
-                <li class="bas"><a href="livre-or.php">LIVRE D'OR</a></li>
-                <li><a href="commentaire.php">COMMENTAIRES</a></li>
-            </ul>
-        </nav>
-       
-    </header>
+<?php
+    include("barrenav.php");//j'ai au prealable crée sur un autre fichier une barre nav qui change selon si je suis connecté ou non//
+    ?> 
 
 
 
@@ -47,6 +39,12 @@
             <p> Nous vous souhaitons une bonne navigation, cliquez sur inscription ou connexion pour commencer...</p>
         </article>  
     </section>
+    <?php
+    if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
+     session_destroy();
+     header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+ }
+ ?>
  
 </main>
 
