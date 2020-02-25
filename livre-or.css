@@ -69,7 +69,33 @@ li a{
     font-style: oblique;
     margin-top: 10px;
 }
-        
+ 
+
+#container {
+    margin-left: 18%;
+    width: 44%;
+    border: 92px solid rgba(250, 247, 247, 0.555);
+  }
+
+  
+#split {
+    height: 200px;
+    box-sizing: border-box;
+    width: 102%;
+    border: 1em silver ridge;
+    background-color: rgba(87, 44, 44, 0.301);
+  }
+
+
+  #texte{
+      color:white;
+      font-family: cursive;
+      font-style: oblique;
+      font-size:x-large;
+      text-align: center;
+      margin-top: 65px;
+      
+  }
     
 #logo{
     box-shadow: 1px -10px 10px white;

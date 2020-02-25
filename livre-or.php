@@ -18,11 +18,20 @@ session_start();
 
 <main>
 
+
     <section>
         <article id="align">  
             <p><strong>Bienvenue sur le livre d'or de </p><p id="nom">"PROTECT ANIMAL"</strong></p>
         </article>      
     </section>
+
+    <section id="container">
+        <article id="split">
+            <box-sizing><p id="texte">COMMENTAIRES</p></box-sizing>
+        </article>
+    </section>
+
+
 <?php
 if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
     session_destroy();
