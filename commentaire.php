@@ -30,9 +30,19 @@ session_start()
     </section>
 
     <section>
-        <article  id="zonecom">
-            <textarea id="text" cols="40" rows="20"></textarea>
-        <article>
+        <form method="post">
+            <article id="zonetitre">
+                <textarea class="text" cols="40" row="20" placeholder="Titre de votre commentaire"></textarea>
+            </article>
+            
+                <article  id="zonecom">
+                    <textarea class="text" cols="40" rows="15" placeholder="Votre commentaire"></textarea>
+                </article>
+
+                    <article id="zonevalid"> 
+                        <input class="text" type="submit" valeur="valider" name="valider"/>
+                    </article>
+        </form>
     </section>
     <?php
     }

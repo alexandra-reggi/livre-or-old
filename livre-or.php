@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <?php
 session_start();
+$connexion = mysqli_connect("localhost", "root", "", "livreor");
+$requete = "SELECT*FROM commentaires ORDER by id DESC";
+$resultat = mysqli_query($connexion, $requete);
+if (isset($_SESSION['login']))
+			{
+			
+			} else header('location: connexion.php');
+
 ?>
+
 <html>
 
     <head>
@@ -25,19 +34,39 @@ session_start();
         </article>      
     </section>
 
+    <?php
+         while($data1 = mysqli_fetch_array($resultat))
+         {
+                
+    ?>
+                      
     <section id="container">
         <article id="split">
-            <box-sizing><p id="texte">COMMENTAIRES</p></box-sizing>
+            <box-sizing><p id="texte"> 
+            <?php
+                $requete = "SELECT login FROM utilisateurs WHERE id = '".$data1['id-utilisateur']."'";
+                $query = mysqli_query($connexion, $requete);
+                $data2 = mysqli_fetch_assoc($query);
+                                            
+                    echo "Posté le: ", $data1['date'], " par ", $data2['login'], "";
+            ?>
+            <?php echo $data1['commentaire']; ?></p></box-sizing>
+           
         </article>
     </section>
 
+    <?php
+         }
+                            
+    ?>
 
-<?php
+ <?php   
 if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
     session_destroy();
     header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
 }
 ?>
+
 </main>
 
 <footer id="logo">
@@ -55,3 +84,5 @@ if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
     </article>
   
 </footer>
+
+</html>
