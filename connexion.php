@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    session_start(); // lorsqu'on est connecté, l'ordi nous reconnait toujours lorsqu'on change de pages//
+    session_start(); 
 ?>
 
 
@@ -16,7 +16,7 @@
 <body>
 
     <?php
-    include("barrenav.php");//j'ai au prealable crée sur un autre fichier une barre nav qui change selon si je suis connecté ou non//
+    include("barrenav.php");
     ?> 
 
     <main>
@@ -36,10 +36,10 @@
             <article id="form-img">
                 <form id="form1" method ="POST">
                     <label>Login</label><br>
-                    <input type ="text" name ="login" placeholder ="Entrez votre login"/><br><br>
+                    <input class="ipt" type ="text" name ="login" placeholder ="Entrez votre login"/><br><br>
                     <label>Password</label><br>
-                    <input type="passeword" name="password" placeholder=" Entrez votre password"/><br><br>
-                    <input type = "submit" value="connexion" name="submit"/>
+                    <input class="ipt" type="passeword" name="password" placeholder=" Entrez votre password"/><br><br>
+                    <input class="ipt" type = "submit" value="CONNEXION" name="submit"/>
                 </form> 
             </article>
 
@@ -59,8 +59,8 @@ $resultat= mysqli_fetch_all($query);
 
 if(isset($_POST['submit'])){
  
-    $login= $_POST['login']; //le login sera ce qui sera rentré par le client//
-    $password=  password_hash ($_POST['password'], PASSWORD_BCRYPT, array('cost' => 12)); // le password   sera   "       "        "   //
+    $login= $_POST['login']; 
+    $password=  password_hash ($_POST['password'], PASSWORD_BCRYPT, array('cost' => 12)); 
     
 
 
@@ -89,12 +89,12 @@ if(isset($_POST['submit'])){
 } 
 
 if (isset ($_SESSION['login'])){
-    echo "bienvenue";    
+    echo "<p id='bvn'>BIENVENUE</p>";    
 }
 
- if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
+ if (isset($_GET['disconnect'])){ 
      session_destroy();
-     header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+     header("location:index.php");
  }
 
 ?>

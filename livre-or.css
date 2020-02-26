@@ -58,8 +58,9 @@ li a{
 
 #align{
     display: flex;
-    margin-left: 10%;
     font-size: 173%;
+    flex-direction: row;
+    justify-content: center;
 }
 
 
@@ -72,7 +73,7 @@ li a{
  
 
 #container {
-    margin-left: 18%;
+    margin-left: 22%;
     width: 44%;
     border: 92px solid rgba(250, 247, 247, 0.555);
   }
@@ -82,7 +83,7 @@ li a{
     height: 200px;
     box-sizing: border-box;
     width: 102%;
-    border: 1em silver ridge;
+    border: 1em rgb(144, 184, 248) ridge;
     background-color: rgba(87, 44, 44, 0.301);
     color: white;
   }
@@ -94,7 +95,7 @@ li a{
       font-style: oblique;
       font-size:x-large;
       text-align: center;
-      margin-top: 65px;
+      margin-top: 50px;
       
   }
     

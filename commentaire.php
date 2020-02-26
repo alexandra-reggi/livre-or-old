@@ -30,17 +30,12 @@ session_start()
     </section>
 
     <section>
-        <form method="post">
-            <article id="zonetitre">
-                <textarea class="text" cols="40" row="20" placeholder="Titre de votre commentaire"></textarea>
-            </article>
-            
                 <article  id="zonecom">
                     <textarea class="text" cols="40" rows="15" placeholder="Votre commentaire"></textarea>
                 </article>
 
                     <article id="zonevalid"> 
-                        <input class="text" type="submit" valeur="valider" name="valider"/>
+                        <input class="text" type="submit" valeur="valider" name="submit"/>
                     </article>
         </form>
     </section>
@@ -48,7 +43,7 @@ session_start()
     }
 
     else{
-        echo "<h1 id='phrase'>Pour laisser un commentaire vous devez etre &nbsp<a href='connexion.php'> CONNECTE</a></p>";
+        echo "<h1 id='phrase'>Pour laisser un commentaire vous devez etre connecté <a href='connexion.php'> CONNECTE</a></p>";
     }
     if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
         session_destroy();

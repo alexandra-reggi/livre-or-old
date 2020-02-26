@@ -71,15 +71,16 @@ li a{
 
 
 #form-img{
-    margin-top: 39px;
+    margin-top: 6px;
+    margin-left: 22px;
 }
 
 #form1{
     height: 172px;
     margin-top: -3%;
-    margin-left: 10%;
+    margin-left: 8%;
     font-size: 29px;
-    text-shadow: -1px -2px rgb(105, 104, 104);
+    text-shadow: -1px -2px rgb(105, 104, 104);   
  }
         
 
@@ -94,7 +95,7 @@ li:hover{
         color: white;
         background-color: black;
         display: flex;
-        margin-top: 183px;
+        margin-top: 234px;
         height: 60px;
         width: 100%;
     }
@@ -108,9 +109,27 @@ li:hover{
 
 
     #carotte{
-        margin-top: -51px;
+        margin-top: -155px;
         width: 405px;
         height: 315px;
     }
 
-    
+
+    .ipt{
+        border-color: darkorange;
+        border-radius: 42px;
+        text-align: center;
+        width: 175px;
+        height: 35px;
+    }
+
+
+    #bvn{
+        position: absolute; 
+        color: orangered; 
+        font-size: -webkit-xxx-large;
+        margin-top: 127px;
+        margin-left: 100px;
+    }
+
+   

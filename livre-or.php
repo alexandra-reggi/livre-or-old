@@ -22,11 +22,10 @@ if (isset($_SESSION['login']))
         
 <body>
 <?php
-    include("barrenav.php");//j'ai au prealable crée sur un autre fichier une barre nav qui change selon si je suis connecté ou non//
+    include("barrenav.php");
     ?> 
 
 <main>
-
 
     <section>
         <article id="align">  
@@ -48,7 +47,7 @@ if (isset($_SESSION['login']))
                 $query = mysqli_query($connexion, $requete);
                 $data2 = mysqli_fetch_assoc($query);
                                             
-                    echo "Posté le: ", $data1['date'], " par ", $data2['login'], "";
+                    echo "Posté le: ", $data1['date']," par ", $data2['login'], "";
             ?>
             <?php echo $data1['commentaire']; ?></p></box-sizing>
            
@@ -61,9 +60,9 @@ if (isset($_SESSION['login']))
     ?>
 
  <?php   
-if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
+if (isset($_GET['disconnect'])){ 
     session_destroy();
-    header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+    header("location:index.php");
 }
 ?>
 

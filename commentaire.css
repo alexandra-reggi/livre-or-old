@@ -93,14 +93,6 @@ li a{
 }
 
 
-#zonetitre{
-    display: flex;
-    flex-direction: row;
-    margin-top: 9px;
-    margin-left: 152px;
-}
-
-
 #zonecom{
     display: flex;
     flex-direction: row;
@@ -112,7 +104,7 @@ li a{
 #zonevalid{
     display: flex;
     flex-direction: row;
-    margin-top: 9px;
+    margin-top: 20px;
     margin-left: 277px;
     height: 64px; 
 }
