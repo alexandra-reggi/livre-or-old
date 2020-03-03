@@ -40,7 +40,7 @@ $query= mysqli_query($connexion, $requete);
 $resultat= mysqli_fetch_all($query);
 
 
-    if (isset($_POST['submit'])){ //quand le client valide//
+    if (isset($_POST['submit'])){ 
 
         $login= $_POST['login']; //Avec Udapte je remodifie tout dans la bdd//
         $password= password_hash($_POST['password'] , PASSWORD_BCRYPT, array('cost' => 12));
@@ -64,7 +64,7 @@ if (isset($_GET['disconnect'])){
                     <label> Nouveau Login</label><br>
                     <input class="impt" type ="text" name ="login" value ="<?php echo $resultat[0][1]?>"/><br><br> 
                     <label>Nouveau Password</label><br>
-                    <input class="impt" type="passeword" name="password" value="<?php echo $resultat[0][2]?>"/><br><br> 
+                    <input class="impt" type="password" name="password" value="<?php echo $resultat[0][2]?>"/><br><br> 
                     <input class="impt" type = "submit" value="Valider" name="submit"/>
                 </form> 
             </article>

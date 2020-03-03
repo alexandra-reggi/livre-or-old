@@ -4,10 +4,7 @@ session_start();
 $connexion = mysqli_connect("localhost", "root", "", "livreor");
 $requete = "SELECT*FROM commentaires ORDER by id DESC";
 $resultat = mysqli_query($connexion, $requete);
-if (isset($_SESSION['login']))
-			{
-			
-			} else header('location: connexion.php');
+
 
 ?>
 
@@ -41,15 +38,15 @@ if (isset($_SESSION['login']))
                       
     <section id="container">
         <article id="split">
-            <box-sizing><p id="texte"> 
+            <p id="texte"> 
             <?php
-                $requete = "SELECT login FROM utilisateurs WHERE id = '".$data1['id-utilisateur']."'";
+                $requete = "SELECT login FROM utilisateurs WHERE id = '".$data1['id_utilisateur']."'";
                 $query = mysqli_query($connexion, $requete);
                 $data2 = mysqli_fetch_assoc($query);
                                             
                     echo "Posté le: ", $data1['date']," par ", $data2['login'], "";
             ?>
-            <?php echo $data1['commentaire']; ?></p></box-sizing>
+            <?php echo $data1['commentaire']; ?></p>
            
         </article>
     </section>

@@ -24,13 +24,13 @@
     <section id="form-img">
         <article >
             <form id="form1" action="inscription.php" method ="POST">
-                <label>Login</label><br>
-                <input type ="text" name ="login" placeholder ="Entrez votre login"/><br><br>
-                <label>Password</label><br>
-                <input type ="password" name ="password" placeholder ="Entrez votre password"/><br><br>
-                <label>Confirmez le Password</label><br>
-                <input type ="password" name ="confirm" placeholder ="Confirmez votre password"/><br><br>
-                <input type = "submit" value="s'inscrire" name="submit"/>
+                <label class="lab">Login</label><br>
+                <input class="ipt" type ="text" name ="login" placeholder ="Entrez votre login"/><br><br>
+                <label class="lab">Password</label><br>
+                <input class="ipt" type ="password" name ="password" placeholder ="Entrez votre password"/><br><br>
+                <label class="lab">Confim Pass</label><br>
+                <input class="ipt" type ="password" name ="confirm" placeholder ="Confirmez votre password"/><br><br>
+                <input class="ipt" type = "submit" value="s'inscrire" name="submit"/>
             </form>
         </article>
 

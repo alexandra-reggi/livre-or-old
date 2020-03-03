@@ -1,5 +1,6 @@
 <?php 
-session_start()
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +15,30 @@ session_start()
         
 <body>
 <?php
-    include("barrenav.php");//j'ai au prealable crée sur un autre fichier une barre nav qui change selon si je suis connecté ou non//
+    include("barrenav.php");
     ?> 
 
 <main>
 
 <?php
-
+   $connexion= mysqli_connect("localhost","root","","livreor");
+ $login = $_SESSION['login'];
     if (isset($_SESSION['login'])){
+        if (isset($_POST['submit'])){
+       $requete= "SELECT * FROM utilisateurs WHERE login='".$login."'";
+       $query= mysqli_query($connexion,$requete);
+       $resultat= mysqli_fetch_all($query);
+       
+            
+
+      $message =$_POST['message'];
+      $iduser =$resultat[0][0];
+       $requete2= "INSERT INTO commentaires (commentaire, id_utilisateur, date) VALUES ('$message', '$iduser', NOW())"; 
+       $query2=  mysqli_query($connexion,$requete2);
+       header('location: livre-or.php');
+        }
+    
+
      ?>   
     <section>
         <article id="align">  
@@ -30,8 +47,9 @@ session_start()
     </section>
 
     <section>
+        <form method="post">
                 <article  id="zonecom">
-                    <textarea class="text" cols="40" rows="15" placeholder="Votre commentaire"></textarea>
+                    <textarea class="text" cols="40" rows="15" name="message" placeholder="Votre commentaire"></textarea>
                 </article>
 
                     <article id="zonevalid"> 
@@ -45,9 +63,9 @@ session_start()
     else{
         echo "<h1 id='phrase'>Pour laisser un commentaire vous devez etre connecté <a href='connexion.php'> CONNECTE</a></p>";
     }
-    if (isset($_GET['disconnect'])){ //Dès qu'il se deconnecte//
+    if (isset($_GET['disconnect'])){ 
         session_destroy();
-        header("location:index.php");//il est redirigé sur cette page, ici par exemple c'est tjrs la même//
+        header("location:index.php");
     }
 ?>
 

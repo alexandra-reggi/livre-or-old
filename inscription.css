@@ -68,8 +68,9 @@ li a{
 
 
 #form1{
-    margin-top: 4%;
-    margin-left: 10%;
+    height: 172px;
+    margin-top: -3%;
+    margin-left: 56%;
     font-size: 29px;
     text-shadow: -1px -2px rgb(105, 104, 104);
  }
@@ -87,7 +88,7 @@ li:hover{
     color: white;
     background-color: black;
     display: flex;
-    margin-top: 6%;
+    margin-top: 8%;
     height: 62px;
     width: 100%;
     }
@@ -99,7 +100,7 @@ li:hover{
 
 
 #form-img{
-    margin-top: 3px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
@@ -111,3 +112,16 @@ li:hover{
     margin-right: 167px;
     margin-bottom: 124px;
    }
+
+
+   .ipt{
+    border-color:rgb(97, 179, 140);
+    border-radius: 42px;
+    text-align: center;
+    width: 175px;
+    height: 35px;
+}
+
+.lab{
+    margin-left: 32px;
+}
